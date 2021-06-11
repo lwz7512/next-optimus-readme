@@ -78,9 +78,7 @@ export default function Header() {
       <ul className="mobile-menu">
         {
           meta.menu.map(m => (
-            <li 
-              key={m.name}
-              className={`menu-item`}>
+            <li key={m.name}>
               <Link href={m.slug}>
                 <a>{m.name}</a>
               </Link>
