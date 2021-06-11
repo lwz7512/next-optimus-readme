@@ -12,3 +12,7 @@
   top: -41px;
   background-color: #333;
 }
+
+.blankslate h1, .blankslate h3 {
+  z-index: 1;
+}
