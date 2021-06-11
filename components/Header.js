@@ -1,55 +1,56 @@
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from "next/router"
 import Link from 'next/link'
 import meta from '../meta.json'
-
-
-
-// const NavLink = ({ children, href }) => {
-//   const child = React.Children.only(children);
-//   const router = useRouter();
-  
-//   return (
-//     <Link href={href}>
-//       {React.cloneElement(child, {
-//         "aria-current": router.asPath === href ? "page" : null
-//       })}
-//     </Link>
-//   );
-// };
-
+import { RiMenuFill, RiCloseFill } from 'react-icons/ri'
 
 
 export default function Header() {
-
+  const [open, setOpen] = useState(false)
   const router = useRouter()
 
-  const scrollHandler = () => {
-    const distance = document.documentElement.scrollTop
-    if(distance > 210) {
-      document.querySelector('.trans-background').classList.add('solid')
-    }else{
-      document.querySelector('.trans-background').classList.remove('solid')
-    }
-  }
-
   useEffect(() => {
+    const scrollHandler = () => {
+      const distance = document.documentElement.scrollTop
+      if(distance > 210) {
+        document.querySelector('.trans-background').classList.add('solid')
+      }else{
+        document.querySelector('.trans-background').classList.remove('solid')
+      }
+    }
     window.addEventListener('scroll', scrollHandler)
     return () => window.removeEventListener('scroll', scrollHandler)
-
   }, [])
+
+
+  useEffect(() => {
+    const handleRouteChange = (url, { shallow }) => {
+      setOpen(false)
+      document.querySelector('.mobile-menu').classList.remove('active')
+    }
+    router.events.on('routeChangeStart', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange)
+    }
+  }, [])
+
+  const openMenulist = () => {
+    document.querySelector('.mobile-menu').classList.toggle('active')
+    setOpen(!open)
+  }
 
 
   return (
     <header className="fixed-header">
-      <div className="trans-background"/>
-      <div className="d-flex flex-justify-between px-3">
+      {/* hori header bar */}
+      <div className="d-flex flex-justify-between px-3 trans-background">
         <Link href="/">
           <a className="logo-link">
             <img src={meta.logo} className="logo" />
           </a>
         </Link>
+        {/* navigation menu */}
         <nav className="menu-nav">
           <ul className="hori-list">
             {
@@ -65,7 +66,28 @@ export default function Header() {
             }
           </ul>
         </nav>
+        {/* mobile menu opner */}
+        <div className="mobile-nav">
+          <button type="button" onClick={openMenulist}>
+            {!open && <RiMenuFill style={{width:24, height:24}} />}
+            {open && <RiCloseFill style={{width:24, height:24}} />}
+          </button>
+        </div>
       </div>
+      {/* mobile menu under header bar with full width */}
+      <ul className="mobile-menu">
+        {
+          meta.menu.map(m => (
+            <li 
+              key={m.name}
+              className={`menu-item`}>
+              <Link href={m.slug}>
+                <a>{m.name}</a>
+              </Link>
+            </li>
+          ))
+        }
+      </ul>
     </header>
   )
 }

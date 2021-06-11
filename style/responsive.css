@@ -2,6 +2,20 @@
   
   .markdown-body {
     padding: 0 20px 20px;
+    position: relative;
+    top: -20px;
+  }
+
+  .menu-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+
+  .mobile-menu.active {
+    display: block;
   }
 
 }

@@ -4,6 +4,7 @@
 @import '@primer/css/dist/markdown.css';
 
 @import './header.css';
+@import './footer.css';
 @import './markdown.css';
 @import './post.css';
 @import './hero.css';
