@@ -1,0 +1,58 @@
+.fixed-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.hori-list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: flex-end;
+}
+
+.hori-list .menu-item {
+  /* padding: 0 20px; */
+  color: #fff;
+  padding: 10px 20px 8px;
+}
+
+.menu-item a:hover {
+  color: #FFE4E1;
+}
+
+.menu-item.active {
+  /* border-bottom: 1px solid #F00; */
+  box-shadow: inset 0 -2px 0 #8B4513;
+}
+
+.trans-background {
+  background-color: #000;
+  opacity: 0.1;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  z-index: -1;  /* this make sure its under the text  */
+}
+
+.trans-background.solid {
+  opacity: 0.8;
+}
+
+.menu-nav {
+  z-index: 10;
+  padding-bottom: 2px;
+}
+
+.logo-link {
+  line-height: 0.9;
+  padding: 10px 0;
+}
+
+.logo {
+  width: 20px;
+  height: 20px;
+}
+

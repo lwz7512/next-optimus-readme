@@ -1,12 +1,16 @@
+import Footer from './Footer'
 export default function Layout({ children }) {
   return (
     <>
-      <div className="wrapper">{children}</div>
+      <div className="wrapper">
+        {children}
+        <Footer />
+      </div>
       <style jsx>{`
         .wrapper {
-          max-width: 36rem;
+          max-width: 1024px;
           margin: 0 auto;
-          padding: 1.5rem;
+          padding: 0;
         }
       `}</style>
       <style jsx global>{`

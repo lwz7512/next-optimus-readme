@@ -1,0 +1,41 @@
+.markdown-body {
+  padding: 0 0 36px;
+}
+
+.markdown-body .highlight pre, .markdown-body pre {
+  /* for markdown code block background color */
+  background-color: #f6f8fa;
+}
+
+.markdown-body pre code, .markdown-body pre tt {
+  /* for markdown code block text color */
+  color: #0070f3;
+}
+
+.markdown-body blockquote {
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  border-left: 6px solid rgb(33, 136, 255);
+  border-top-color:rgb(33, 136, 255);
+  border-right-color:rgb(33, 136, 255);
+  border-bottom-color:rgb(33, 136, 255);
+  background-color:rgb(241, 248, 255)
+}
+
+.markdown-body h1, 
+.markdown-body h2, 
+.markdown-body h3, 
+.markdown-body h4, 
+.markdown-body h5, 
+.markdown-body h6 {
+  margin-top: 36px;
+}
+
+.markdown-body ul, .markdown-body ol {
+  padding-left: 1em;
+}
+
+.markdown-body ul li > a {
+  text-decoration: underline;
+}

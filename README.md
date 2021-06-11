@@ -1,10 +1,21 @@
-# MDX Remote Example
+---
+title: Next Optimus Readme
+description: A NextJS driven README website for personal use
+image: /images/thinking-in-45-degree-md.png
+---
+
+
+## Intro
 
 This example shows how a simple blog might be built using the [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote) library, which allows mdx content to be loaded via `getStaticProps` or `getServerSideProps`. The mdx content is loaded from a local folder, but it could be loaded from a database or anywhere else.
 
 The example also showcases [next-remote-watch](https://github.com/hashicorp/next-remote-watch), a library that allows next.js to watch files outside the `pages` folder that are not explicitly imported, which enables the mdx content here to trigger a live reload on change.
 
 Since `next-remote-watch` uses undocumented Next.js APIs, it doesn't replace the default `dev` script for this example. To use it, run `npm run dev:watch` or `yarn dev:watch`.
+
+
+
+>  some tips...
 
 ## Deploy your own
 
@@ -75,3 +86,54 @@ export async function getStaticProps() {
   }
 }
 ```
+
+
+## FAQ
+
+<details>
+
+<summary>How do I add more language highlighting support?</summary>
+
+By default `prism-react-renderer` only includes an [arbitrary subset of the languages](https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js) that Prism supports. You can add support for more by including their definitions from the main `prismjs` package:
+
+```js
+import Prism from "prism-react-renderer/prism";
+
+(typeof global !== "undefined" ? global : window).Prism = Prism;
+
+require("prismjs/components/prism-kotlin");
+require("prismjs/components/prism-csharp");
+```
+</details>
+
+<details>
+
+<summary>How do I use my old Prism css themes?</summary>
+
+`prism-react-renderer` still returns you all proper `className`s via the prop getters,
+when you use it. By default however it uses its new theming system, which output a
+couple of `style` props as well.
+
+If you don't pass `theme` to the `<Highlight />` component it will default to not
+outputting any `style` props, while still returning you the `className` props, like
+so:
+
+```js
+<Highlight
+  {...defaultProps}
+  code={exampleCode}
+  language="jsx"
+  theme={undefined}
+>
+  {highlight => null /* ... */}
+</Highlight>
+```
+
+</details>
+
+
+## Credits
+
+- Banner Image Photo by [Benjamin Davies @unsplash](https://unsplash.com/photos/JrZ1yE1PjQ0)
+- Logo and fav Icons made by [Freepik](https://www.flaticon.com/) from [flaticon](https://www.flaticon.com)
+- [Favicon Generator. For real.](https://realfavicongenerator.net/)

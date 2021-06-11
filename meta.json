@@ -1,0 +1,30 @@
+{
+  "title": "Next Optimus Readme",
+  "description": "A NextJS driven README website for personal use",
+  "image": "/images/thinking-in-45-degree-md.png",
+  "logo": "/favicon/robot.svg",
+  "twitter": "",
+  "github": "",
+  "menu": [
+    {
+      "name": "CHANGELOG",
+      "slug": "/changelog"
+    },
+    {
+      "name": "CODESTYLE",
+      "slug": "/code_of_conduct"
+    },
+    {
+      "name": "CONTRIBUTING",
+      "slug": "/contributing"
+    },
+    {
+      "name": "TEAM",
+      "slug": "/core_team"
+    },
+    {
+      "name": "LICENSE",
+      "slug": "/license"
+    }
+  ]
+}
