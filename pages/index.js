@@ -15,13 +15,13 @@ export default function Index({content}) {
   return (
     <Layout>
       <Head>
-        <title>Home page | {meta.title} </title>
+        <title>Home page | { process.env.NEXT_PUBLIC_TITLE || meta.title} </title>
       </Head>
       <Header />
       <HeroBanner
-        title={meta.title}
-        description={meta.description}
-        imageURL={meta.image}
+        title={process.env.NEXT_PUBLIC_TITLE || meta.title}
+        description={process.env.NEXT_PUBLIC_DESCRIPTION || meta.description}
+        imageURL={process.env.NEXT_PUBLIC_IMAGE || meta.image}
       />
       <main
         className="markdown-body"

@@ -40,6 +40,8 @@ export default function Header() {
     setOpen(!open)
   }
 
+  const realMenu = JSON.parse(process.env.NEXT_PUBLIC_MENU) || meta.menu
+
 
   return (
     <header className="fixed-header">
@@ -54,7 +56,7 @@ export default function Header() {
         <nav className="menu-nav">
           <ul className="hori-list">
             {
-              meta.menu.map(m => (
+              realMenu.map(m => (
                 <li 
                   key={m.name}
                   className={`menu-item ${router.asPath === m.slug ? 'active': ''}`}>
@@ -77,7 +79,7 @@ export default function Header() {
       {/* mobile menu under header bar with full width */}
       <ul className="mobile-menu">
         {
-          meta.menu.map(m => (
+          realMenu.map(m => (
             <li key={m.name}>
               <Link href={m.slug}>
                 <a>{m.name}</a>

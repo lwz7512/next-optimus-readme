@@ -2,6 +2,7 @@
   "name": "next-optimus-readme",
   "version": "1.0.0",
   "license": "MIT",
+  "bin": "./cli.js",
   "scripts": {
     "dev": "next",
     "dev:watch": "next-remote-watch ./posts",
@@ -24,6 +25,8 @@
     "remark-html": "13.0.1"
   },
   "devDependencies": {
+    "cross-spawn": "^7.0.3",
+    "meow": "^9.0.0",
     "serve": "^12.0.0"
   }
 }
