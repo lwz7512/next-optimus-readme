@@ -3,14 +3,14 @@
 
 A NextJS driven README website for project introduction use, simply display project related markdown files like: `README.md`, `CHANGELOG.md`, `CODE_OF_CONDUCT.md`, etc.
 
-
 >  blog pages comming soon...
 
-## Deploy your own
+## Features
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+- Standalone Next.js application which can be cusomized for your case
+- A project doc generator using README.md and other .md files
+- Builtin support for .mdx content generation
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/lwz7512/next-optimus-readme&project-name=with-mdx-remote&repository-name=next-big-project)
 
 ## How to use
 
@@ -18,11 +18,13 @@ There is a starter prject [using-optimus-readme](https://github.com/lwz7512/usin
 
 please check it out!
 
-## Features
 
-- Standalone Next.js application which can be cusomized for your case
-- A project doc generator using README.md and other .md files
-- Extandable content generation for .mdx content
+## Deploy your own
+
+Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/lwz7512/next-optimus-readme&project-name=with-mdx-remote&repository-name=next-big-project)
+
 
 
 ## FAKE-FAQ
