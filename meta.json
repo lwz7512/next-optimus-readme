@@ -3,6 +3,7 @@
   "description": "A NextJS driven README website for project introduction",
   "image": "/images/thinking-in-45-degree-md.png",
   "logo": "/favicon/robot.svg",
+  "author": "@RainbowCodingStudio",
   "twitter": "https://twitter.com/lwz75121",
   "github": "https://github.com/lwz7512",
   "menu": [

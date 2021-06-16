@@ -34,3 +34,10 @@ yarn-error.log*
 .vercel
 
 .README.md
+.CHANGELOG.md
+.CODE_OF_CONDUCT.md
+.CONTRIBUTING.md
+.CORE_TEAM.md
+.LICENSE
+
+/public/assets/

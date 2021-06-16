@@ -41,15 +41,16 @@ export default function Header() {
   }
 
   const realMenu = JSON.parse(process.env.NEXT_PUBLIC_MENU) || meta.menu
-
+  const realLogo = process.env.NEXT_PUBLIC_LOGO || meta.logo
 
   return (
     <header className="fixed-header">
       {/* hori header bar */}
       <div className="d-flex flex-justify-between px-3 trans-background">
+        {/* logo */}
         <Link href="/">
           <a className="logo-link">
-            <img src={meta.logo} className="logo" />
+            <img src={realLogo} className="logo" />
           </a>
         </Link>
         {/* navigation menu */}
