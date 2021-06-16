@@ -10,6 +10,7 @@ A NextJS driven README website for project introduction use, simply display proj
 - Standalone Next.js application which can be cusomized for your case
 - A project doc generator using README.md and other .md files
 - Builtin support for .mdx content generation
+- Responsive layout for mobile screen
 
 
 ## How to use
