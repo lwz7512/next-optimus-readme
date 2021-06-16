@@ -14,9 +14,9 @@ A NextJS driven README website for project introduction use, simply display proj
 
 ## How to use
 
-There is a starter prject [using-optimus-readme](https://github.com/lwz7512/using-optimus-readme) which demonstrated the usage.
+There is a starter prject [`using-optimus-readme`](https://github.com/lwz7512/using-optimus-readme) which demonstrated the usage.
 
-please check it out!
+please [`check it out`](https://github.com/lwz7512/using-optimus-readme)!
 
 
 ## Deploy your own
