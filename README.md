@@ -14,7 +14,7 @@ Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_mediu
 
 ## How to use
 
-There is a starter prject `[using-optimus-readme](https://github.com/lwz7512/using-optimus-readme)` which demonstrated the usage.
+There is a starter prject [using-optimus-readme](https://github.com/lwz7512/using-optimus-readme) which demonstrated the usage.
 
 please check it out!
 
