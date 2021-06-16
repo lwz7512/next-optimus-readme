@@ -40,7 +40,7 @@ console.log(packageJSON.logo)
 console.log(packageJSON.banner)
 console.log(packageJSON.menu)
 
-const menuJson = JSON.stringify(packageJSON.menu)
+const menuJson = JSON.stringify(packageJSON.menu || '[]')
 
 let envContent = `NEXT_PUBLIC_TITLE=${packageJSON.name}${os.EOL}`
 envContent += `NEXT_PUBLIC_DESCRIPTION=${packageJSON.description}${os.EOL}`
@@ -73,11 +73,14 @@ const checkAndCopyIMG = file => {
 }
 
 console.log('====== copy README.md and logo/banner ...')
-checkAndCopyMD('README.md')
-checkAndCopyMD('CHANGELOG.md')
-checkAndCopyMD('CODE_OF_CONDUCT.md')
-checkAndCopyMD('CONTRIBUTING.md')
-checkAndCopyMD('CORE_TEAM.md')
+checkAndCopyMD('README.md') // homepage
+packageJSON.menu && packageJSON.menu.forEach(m => {
+	let mdFile = m.slug.substr(1).toUpperCase()
+	mdFile = mdFile == 'LICENSE'?'LICENSE':`${mdFile}.md`
+	console.log('>>> check and copy: '+mdFile)
+	checkAndCopyMD(mdFile)
+})
+
 checkAndCopyIMG(packageJSON.logo)
 checkAndCopyIMG(packageJSON.banner)
 
@@ -92,3 +95,4 @@ console.log('>>>> build completed!')
 console.log('=== to write files back to docs !')
 const output = path.join(origProjectPath, 'docs')
 spawn.sync('npx', ['next', 'export', '-o', output], { stdio: 'inherit' });
+console.log('============ ALL DONE! ============')
