@@ -40,7 +40,7 @@ export default function Header() {
     setOpen(!open)
   }
 
-  const realMenu = JSON.parse(process.env.NEXT_PUBLIC_MENU) || meta.menu
+  const realMenu = process.env.NEXT_PUBLIC_MENU ? JSON.parse(process.env.NEXT_PUBLIC_MENU) : meta.menu
   const realLogo = process.env.NEXT_PUBLIC_LOGO || meta.logo
 
   return (
