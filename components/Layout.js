@@ -11,6 +11,7 @@ export default function Layout({ children }) {
           max-width: 1024px;
           margin: 0 auto;
           padding: 0;
+          background-color: #FFF;
         }
       `}</style>
       <style jsx global>{`

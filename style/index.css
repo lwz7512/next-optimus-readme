@@ -10,3 +10,7 @@
 @import './hero.css';
 
 @import './responsive.css';
+
+:root {
+  --color-bg-canvas: #1B2631;
+}
